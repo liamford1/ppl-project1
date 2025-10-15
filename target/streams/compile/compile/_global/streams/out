@@ -1,0 +1,9 @@
+[0m[[0m[33mwarn[0m] [0m[0m[33m[33m-- [E029] Pattern Match Exhaustivity Warning: /Users/liamford/Documents/project1_students/src/main/scala/edu/colorado/csci3155/project1/StackMachineEmulator.scala:53:8 [0m[0m[0m
+[0m[[0m[33mwarn[0m] [0m[0m[33m53 |[0m        ins [33mmatch[0m {[0m
+[0m[[0m[33mwarn[0m] [0m[0m[33m[33m   |[0m        ^^^[0m[0m
+[0m[[0m[33mwarn[0m] [0m[0m[33m   |[0m[33mmatch[0m may not be exhaustive.[0m
+[0m[[0m[33mwarn[0m] [0m[0m[33m   |[0m[0m
+[0m[[0m[33mwarn[0m] [0m[0m[33m   |[0mIt would fail on pattern case: edu.colorado.csci3155.project1.ICondSkip(_), edu.colorado.csci3155.project1.ISkip(_)[0m
+[0m[[0m[33mwarn[0m] [0m[0m[33m   |[0m[0m
+[0m[[0m[33mwarn[0m] [0m[0m[33m   |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[33mwarn[0m] [0m[0mone warning found[0m

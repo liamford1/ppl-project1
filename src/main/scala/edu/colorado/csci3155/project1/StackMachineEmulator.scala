@@ -58,9 +58,9 @@ object StackMachineEmulator {
                 (Bool(b) :: stack, env)
 
             case IPop =>
-                stack match {
-                    case _ :: rest => (rest, env)
-                    case Nil => throw new IllegalArgumentException("Cant pop from empty stack")
+                env match {
+                    case _ :: restEnv => (stack, restEnv)
+                    case Nil => throw new IllegalArgumentException("Cant pop from empty environment stack")
                 }
 
             case IPlus =>
@@ -148,7 +148,7 @@ object StackMachineEmulator {
                 stack match {
                     case v :: rest =>
                         (rest, (id, v) :: env)
-                    case Nil => 
+                    case Nil =>
                         throw new IllegalArgumentException("Stack needs a value")
                 }
             

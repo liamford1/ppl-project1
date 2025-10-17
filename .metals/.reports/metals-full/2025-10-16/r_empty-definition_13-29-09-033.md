@@ -1,3 +1,19 @@
+error id: file://<WORKSPACE>/src/main/scala/edu/colorado/csci3155/project1/StackMachineCompiler.scala:scala/package.List.
+file://<WORKSPACE>/src/main/scala/edu/colorado/csci3155/project1/StackMachineCompiler.scala
+empty definition using pc, found symbol in pc: scala/package.List.
+empty definition using semanticdb
+empty definition using fallback
+non-local guesses:
+	 -List.
+	 -List#
+	 -List().
+	 -scala/Predef.List.
+	 -scala/Predef.List#
+	 -scala/Predef.List().
+offset: 1711
+uri: file://<WORKSPACE>/src/main/scala/edu/colorado/csci3155/project1/StackMachineCompiler.scala
+text:
+```scala
 package edu.colorado.csci3155.project1
 
 object StackMachineCompiler {
@@ -41,31 +57,18 @@ object StackMachineCompiler {
                 compileToStackMachineCode(e) ++ List(INot)
             
             case Let(x, e1, e2) =>
-                compileToStackMachineCode(e1) ++ List(IStore(x)) ++ compileToStackMachineCode(e2) ++ List(IPop)
+                compileToStackMachineCode(e1) ++ Lis@@t(IStore(x)) ++ compileToStackMachineCode(e2) ++ List(IPop)
             
             case Id(str) =>
                 List(ILoad(str))
-
-            case IfThenElse(cond, thenBranch, elseBranch) =>
-                val cond_ = compileToStackMachineCode(cond)
-                val then_ = compileToStackMachineCode(thenBranch)
-                val else_ = compileToStackMachineCode(elseBranch)
-                
-                cond_ ++ List(ICondSkip(then_.length + 1)) ++ then_ ++ List(ISkip(else_.length)) ++ else_
-            
-            case And(e1, e2) =>
-                val cond = compileToStackMachineCode(e1)
-                val then_ = compileToStackMachineCode(e2)
-                val false_ = List(IPushBool(false))
-                
-                cond ++ List(ICondSkip(then_.length + 1)) ++ then_ ++ List(ISkip(false_.length)) ++ false_
-
-            case Or(e1, e2) =>
-                val cond = compileToStackMachineCode(e1)
-                val true_ = List(IPushBool(true))
-                val else_ = compileToStackMachineCode(e2)
-                
-                cond ++ List(ICondSkip(true_.length + 1)) ++ true_ ++ List(ISkip(else_.length)) ++ else_
         }
     }
+
 }
+
+```
+
+
+#### Short summary: 
+
+empty definition using pc, found symbol in pc: scala/package.List.
